@@ -41,7 +41,7 @@ class Session
     {
         $user = App::$db->getRowWhere('users', ['email' => $user_name, 'password' => $password]);
         if ($user) {
-            $_SESSION['user_name'] = $user_name;
+            $_SESSION['email'] = $user_name;
             $_SESSION['password'] = $password;
             $this->user = $user;
             return true;

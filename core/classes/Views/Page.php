@@ -49,6 +49,18 @@ class Page extends \Core\Abstracts\Views\Page
     }
 
     /**
+     * Čia galėsime nustatyti $data['nav']`io html'ą
+     * kuris bus išspausdinamas page template
+     *
+     * @param string $nav_html
+     */
+    public function setNav(string $nav_html): void
+    {
+        $this->data['nav'] = $nav_html;
+    }
+
+
+    /**
      * Čia galėsime nustatyti $data['Content']`o html'ą
      * kuris bus išspausdinamas page template
      *

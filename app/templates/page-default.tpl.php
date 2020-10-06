@@ -15,7 +15,10 @@
 </head>
 <body>
 
-<header><?= $data['header'] ?></header>
+<header>
+    <?= $data['nav'] ?>
+	<?= $data['header'] ?>
+</header>
 <main><?= $data['Content'] ?></main>
 <footer><?= $data['footer'] ?></footer>
 

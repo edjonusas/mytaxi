@@ -5,6 +5,8 @@ namespace App\Controllers\Guest;
 use App\Abstracts\Controller;
 use App\App;
 use App\Views\Forms\LoginForm;
+use App\Views\Navigation;
+use Core\Views\Content;
 
 class LoginController extends Controller
 {
@@ -36,6 +38,11 @@ class LoginController extends Controller
      */
     function index(): ?string
     {
+
+        $header_content = new Content([
+            'header' => 'Prisijungti'
+        ]);
+
         if (App::$session->getUser()) {
             header('Location: index');
         }
@@ -51,6 +58,7 @@ class LoginController extends Controller
         }
 
         $this->page->setTitle('Login');
+        $this->page->setHeader($header_content->render('Header.tpl.php'));
         $this->page->setContent($login->render());
         return $this->page->render();
     }
