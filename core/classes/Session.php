@@ -24,8 +24,8 @@ class Session
      */
     public function loginFromCookie(): bool
     {
-        if (isset($_SESSION['user_name']) && isset($_SESSION['password'])) {
-            $this->login($_SESSION['user_name'], $_SESSION['password']);
+        if (isset($_SESSION['email']) && isset($_SESSION['password'])) {
+            $this->login($_SESSION['email'], $_SESSION['password']);
             return true;
         }
 
@@ -39,7 +39,7 @@ class Session
      */
     public function login(string $user_name, string $password): bool
     {
-        $user = App::$db->getRowWhere('users', ['user_name' => $user_name, 'password' => $password]);
+        $user = App::$db->getRowWhere('users', ['email' => $user_name, 'password' => $password]);
         if ($user) {
             $_SESSION['user_name'] = $user_name;
             $_SESSION['password'] = $password;

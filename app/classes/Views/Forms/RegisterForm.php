@@ -16,16 +16,15 @@ class RegisterForm extends Form
             ],
             'fields' => [
                 'first_name' => [
-                    'label' => 'Vardas*',
+                    'label' => 'Vardas *',
                     'type' => 'text',
                     'value' => '',
                     'validators' =>
                         [
                             'validate_field_not_empty',
-                            'validate_field_input_length' =>
+                            'validate_field_max_input_length' =>
                                 [
-                                    'min' => 3,
-                                    'max' => 20
+                                    'max' => 40
                                 ],
                         ],
                     'extra' => [
@@ -35,16 +34,15 @@ class RegisterForm extends Form
                     ]
                 ],
                 'last_name' => [
-                    'label' => 'Pavardė*',
+                    'label' => 'Pavardė *',
                     'type' => 'text',
                     'value' => '',
                     'validators' =>
                         [
                             'validate_field_not_empty',
-                            'validate_field_input_length' =>
+                            'validate_field_max_input_length' =>
                                 [
-                                    'min' => 3,
-                                    'max' => 30
+                                    'max' => 40
                                 ],
                         ],
                     'extra' => [
@@ -54,18 +52,14 @@ class RegisterForm extends Form
                     ]
                 ],
                 'email' => [
-                    'label' => 'El. Paštas*',
-                    'type' => 'text',
+                    'label' => 'El. Paštas *',
+                    'type' => 'email',
                     'value' => '',
                     'validators' =>
                         [
                             'validate_field_not_empty',
-                            'validate_field_input_length' =>
-                                [
-                                    'min' => 5,
-                                    'max' => 30
-                                ],
-                            'validate_user_unique',
+                            'validate_field_email',
+                            'validate_email_unique',
                         ],
                     'extra' => [
                         'attr' => [
@@ -74,11 +68,12 @@ class RegisterForm extends Form
                     ]
                 ],
                 'password' => [
-                    'label' => 'Slaptažodis*',
+                    'label' => 'Slaptažodis *',
                     'type' => 'password',
                     'validators' =>
                         [
                             'validate_field_not_empty',
+                            'validate_input_no_gap',
                             'validate_field_input_length' =>
                                 [
                                     'min' => 8,
@@ -89,6 +84,7 @@ class RegisterForm extends Form
                 'phone' => [
                     'label' => 'Tel. numeris',
                     'type' => 'text',
+
                     'extra' => [
                         'attr' => [
                             'placeholder' => '+370 **** ****'
@@ -96,19 +92,32 @@ class RegisterForm extends Form
                     ],
                     'validators' =>
                         [
-                            'validate_field_not_empty',
+                            'validate_field_max_input_length' =>
+                                [
+                                    'max' => 20
+                                ],
+                        ],
+                ],
+                'address' => [
+                    'label' => 'Namų adresas',
+                    'type' => 'text',
+                    'extra' => [
+                        'attr' => [
+                            'placeholder' => 'Vilnius, Vilniaus g. 11 - 11'
+                        ]
+                    ],
+                    'validators' =>
+                        [
+                            'validate_field_max_input_length' =>
+                                [
+                                    'max' => 60
+                                ],
                         ],
                 ],
             ],
             'buttons' => [
                 'register' => [
                     'title' => 'Registruotis',
-                ],
-            ],
-            'validators' => [
-                'validate_fields_match' => [
-                    'password',
-                    'password_repeat'
                 ],
             ],
         ];

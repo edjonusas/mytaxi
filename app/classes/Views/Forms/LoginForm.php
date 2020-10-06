@@ -16,27 +16,24 @@ class LoginForm extends Form
                 'id' => 'login'
             ],
             'fields' => [
-                'user_name' => [
-                    'label' => 'User Name',
-                    'type' => 'text',
+                'email' => [
+                    'label' => 'El. Paštas',
+                    'type' => 'email',
                     'value' => '',
                     'validators' =>
                         [
                             'validate_field_not_empty',
-                            'validate_field_input_length' =>
-                                [
-                                    'min' => 3,
-                                    'max' => 16
-                                ]
+                            'validate_field_email',
+                            'validate_email_exist',
                         ],
                     'extra' => [
                         'attr' => [
-                            'placeholder' => 'Enter Your User Name'
+                            'placeholder' => 'Įveskite savo el. paštą'
                         ]
                     ]
                 ],
                 'password' => [
-                    'label' => 'Password',
+                    'label' => 'Slaptažodis',
                     'type' => 'password',
                     'value' => '',
                     'validators' =>
@@ -47,7 +44,13 @@ class LoginForm extends Form
             ],
             'buttons' => [
                 'login' => [
-                    'title' => 'Login',
+                    'title' => 'Prisijungti',
+                ],
+            ],
+            'validators' => [
+                'validate_password_correct' => [
+                    'email',
+                    'password'
                 ],
             ],
         ];

@@ -6,16 +6,44 @@ use Core\DataHolder\DataHolder;
 
 class User extends DataHolder
 {
-    protected array $properties = ['user_name', 'password'];
+    protected array $properties =
+        [
+            'first_name',
+            'last_name',
+            'email',
+            'password',
+            'phone',
+            'address',
+        ];
 
-    public function setUserName(?string $user_name)
+    public function setFirstName(?string $user_first_name)
     {
-        $this->data['user_name'] = $user_name;
+        $this->data['first_name'] = $user_first_name;
     }
 
-    public function getUserName(): ?string
+    public function getFirstName(): ?string
     {
-        return $this->data['user_name'] ?? null;
+        return $this->data['first_name'] ?? null;
+    }
+
+    public function setLastName(?string $user_last_name)
+    {
+        $this->data['last_name'] = $user_last_name;
+    }
+
+    public function getLastName(): ?string
+    {
+        return $this->data['last_name'] ?? null;
+    }
+
+    public function setEmail(?string $user_email)
+    {
+        $this->data['email'] = $user_email;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->data['email'] ?? null;
     }
 
     public function setPassword(?string $password)
@@ -26,5 +54,25 @@ class User extends DataHolder
     public function getPassword(): ?string
     {
         return $this->data['password'] ?? null;
+    }
+
+    public function setPhone(?string $user_phone)
+    {
+        $this->data['phone'] = $user_phone;
+    }
+
+    public function getPhone(): ?string
+    {
+        return $this->data['phone'] ?? null;
+    }
+
+    public function setAddress(?string $user_address)
+    {
+        $this->data['address'] = $user_address;
+    }
+
+    public function getAddress(): ?string
+    {
+        return $this->data['address'] ?? null;
     }
 }

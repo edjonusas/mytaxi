@@ -44,13 +44,9 @@ class LoginController extends Controller
 
         if ($login->isSubmitted()) {
             if ($login->validate()) {
-                if (App::$session->login($login->getSubmitData()['user_name'], $login->getSubmitData()['password'])) {
+                if (App::$session->login($login->getSubmitData()['email'], $login->getSubmitData()['password'])) {
                     header('Location: index');
-                } else {
-                    $login->addError('Wrong user name or password');
                 }
-            } else {
-                $login->addError('Fill the login form');
             }
         }
 

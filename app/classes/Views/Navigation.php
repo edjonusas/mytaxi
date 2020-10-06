@@ -11,12 +11,14 @@ class Navigation extends View
     public function __construct()
     {
         if (App::$session->getUser()) {
-            $nav[] = ['url' => Router::getUrl('index'), 'title' => 'Account'];
-            $nav[] = ['url' => Router::getUrl('game'), 'title' => 'Play'];
-            $nav[] = ['url' => Router::getUrl('logout'), 'title' => 'Logout'];
+            $nav['left'][] = ['url' => Router::getUrl('index'), 'title' => 'Titulinis'];
+            $nav['left'][] = ['url' => Router::getUrl('feedback'), 'title' => 'Atsiliepimai'];
+            $nav['right'][] = ['url' => Router::getUrl('logout'), 'title' => 'Atsijungti'];
         } else {
-            $nav[] = ['url' => Router::getUrl('register'), 'title' => 'Registration'];
-            $nav[] = ['url' => Router::getUrl('login'), 'title' => 'Login'];
+            $nav['left'][] = ['url' => Router::getUrl('index'), 'title' => 'Titulinis'];
+            $nav['left'][] = ['url' => Router::getUrl('feedback'), 'title' => 'Atsiliepimai'];
+            $nav['right'][] = ['url' => Router::getUrl('register'), 'title' => 'Registruotis'];
+            $nav['right'][] = ['url' => Router::getUrl('login'), 'title' => 'Prisijungti'];
         }
         parent::__construct($nav);
     }

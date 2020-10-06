@@ -61,9 +61,8 @@ class Form extends \Core\Abstracts\Views\Form
                 }
 
                 if ($function($this->getSubmitData()[$key], $field, $params ?? null)) {
-                    // $field['value'] = $this->getSubmitData()[$key];
-                } else {
                     $field['value'] = $this->getSubmitData()[$key];
+                } else {
                     $success = false;
                     break;
                 }

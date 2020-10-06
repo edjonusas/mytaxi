@@ -1,7 +1,6 @@
 <?php
 
 use App\App;
-use Core\Views\Form;
 
 
 /**
@@ -11,44 +10,70 @@ use Core\Views\Form;
  * @param array $field
  * @return bool
  */
-function validate_user_unique(string $field_value, array &$field): bool
+function validate_email_unique(string $field_value, array &$field): bool
 {
 
-    $user = ['user_name' => $field_value];
-    if (App::$db->getRowsWhere('users', $user)) {
-        $field['error'] = "User $field_value already registered";
+    $email = ['email' => $field_value];
+    if (App::$db->getRowsWhere('users', $email)) {
+        $field['error'] = "el. paštas $field_value jau užregistruotas";
         return false;
     }
 
     return true;
 }
 
-function is_logged_in(): bool
+/**
+ * email exist in db
+ *
+ * @param string $field_value
+ * @param array $field
+ * @return bool
+ */
+function validate_email_exist(string $field_value, array &$field): bool
 {
-    if (isset($_SESSION['user_name']) && isset($_SESSION['password'])) {
-        if (App::$db->getRowsWhere('users', ['user_name' => $_SESSION['user_name'], 'password' => $_SESSION['password']])) {
-            return true;
-        }
-    }
+    $user = App::$db->getRowWhere('users', ['email' => $field_value]);
 
-    return false;
+    if ($user) {
+        return true;
+    } else {
+        $field['error'] = 'Tokio vartotojo nėra';
+        return false;
+    }
 }
 
-function is_negative_balance(string $field_value, array &$field): bool
+/**
+ * correct password
+ *
+ * @param array $form_values
+ * @param array $form
+ * @return bool
+ */
+function validate_password_correct(array $form_values, array &$form): bool
 {
-    $submit = new Form();
-    $submit->getSubmitAction();
-    if ($submit->getSubmitAction() === 'remove' || $submit->getSubmitAction() === 'bid') {
-
-        $user = App::$db->getRowWhere('accounts', ['user_name' => App::$session->getUser()['user_name']]);
-
-        if ($user['money'] < $field_value) {
-            $field['error'] = "Not enough money";
+    $user = App::$db->getRowWhere('users', ['email' => $form_values['email']]);
+    var_dump($form_values);
+    if ($user) {
+        if ($user['password'] === $form_values['password']) {
+            return true;
+        } else {
+            $form['error'] = 'Neteisingas slaptažodis';
             return false;
         }
     }
-
-    return true;
 }
 
-
+/**
+ * is email input
+ *
+ * @param string $field_value
+ * @param array $field
+ * @return bool
+ */
+function validate_field_email(string $field_value, array &$field)
+{
+    if (filter_var($field_value, FILTER_VALIDATE_EMAIL)) {
+        return true;
+    } else {
+        $field['error'] = "El. pašto adrese yra klaida";
+    }
+}
