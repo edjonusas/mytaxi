@@ -15,8 +15,8 @@ class RegisterForm extends Form
                 'id' => 'register'
             ],
             'fields' => [
-                'user_name' => [
-                    'label' => 'User Name',
+                'first_name' => [
+                    'label' => 'Vardas*',
                     'type' => 'text',
                     'value' => '',
                     'validators' =>
@@ -25,27 +25,75 @@ class RegisterForm extends Form
                             'validate_field_input_length' =>
                                 [
                                     'min' => 3,
-                                    'max' => 16
+                                    'max' => 20
+                                ],
+                        ],
+                    'extra' => [
+                        'attr' => [
+                            'placeholder' => 'Įveskite savo vardą'
+                        ]
+                    ]
+                ],
+                'last_name' => [
+                    'label' => 'Pavardė*',
+                    'type' => 'text',
+                    'value' => '',
+                    'validators' =>
+                        [
+                            'validate_field_not_empty',
+                            'validate_field_input_length' =>
+                                [
+                                    'min' => 3,
+                                    'max' => 30
+                                ],
+                        ],
+                    'extra' => [
+                        'attr' => [
+                            'placeholder' => 'Įveskite savo pavardę'
+                        ]
+                    ]
+                ],
+                'email' => [
+                    'label' => 'El. Paštas*',
+                    'type' => 'text',
+                    'value' => '',
+                    'validators' =>
+                        [
+                            'validate_field_not_empty',
+                            'validate_field_input_length' =>
+                                [
+                                    'min' => 5,
+                                    'max' => 30
                                 ],
                             'validate_user_unique',
                         ],
                     'extra' => [
                         'attr' => [
-                            'placeholder' => 'Enter Your User Name'
+                            'placeholder' => 'Įveskite savo el. paštą'
                         ]
                     ]
                 ],
                 'password' => [
-                    'label' => 'Password',
+                    'label' => 'Slaptažodis*',
                     'type' => 'password',
                     'validators' =>
                         [
                             'validate_field_not_empty',
+                            'validate_field_input_length' =>
+                                [
+                                    'min' => 8,
+                                    'max' => 30
+                                ],
                         ],
                 ],
-                'password_repeat' => [
-                    'label' => 'Repeat Password',
-                    'type' => 'password',
+                'phone' => [
+                    'label' => 'Tel. numeris',
+                    'type' => 'text',
+                    'extra' => [
+                        'attr' => [
+                            'placeholder' => '+370 **** ****'
+                        ]
+                    ],
                     'validators' =>
                         [
                             'validate_field_not_empty',
@@ -54,7 +102,7 @@ class RegisterForm extends Form
             ],
             'buttons' => [
                 'register' => [
-                    'title' => 'Register',
+                    'title' => 'Registruotis',
                 ],
             ],
             'validators' => [
