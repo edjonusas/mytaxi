@@ -25,10 +25,9 @@ class BasePage extends \Core\Views\Page
         $nav = new Navigation();
 
         $footer = new View();
-
         $this->setTitle('unknown page');
         $this->addCSS('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
-        $this->addCSS('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+        $this->addCSS('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap');
         $this->addCss('/css/style.css');
         $this->setNav($nav->render());
         $this->setFooter($footer->render(ROOT.'/app/templates/content/Footer.tpl.php'));

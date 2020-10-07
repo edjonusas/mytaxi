@@ -37,6 +37,17 @@ function input_attr(string $field_id, array $field): string
     return html_attr($attributes);
 }
 
+function textarea_attr(string $field_id, array $field): string
+{
+    $attributes = [
+        'name' => $field_id,
+        'value' => $field['value'] ?? ''
+    ];
+    $attributes += $field['extra']['attr'] ?? [];
+
+    return html_attr($attributes);
+}
+
 /**
  * Generating button from given array
  *

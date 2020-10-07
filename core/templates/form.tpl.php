@@ -21,6 +21,10 @@
         <?php elseif ($field['type'] == 'range'): ?>
 			<input <?php print range_attr($field_id, $field); ?> />
 
+        <?php elseif ($field['type'] == 'textarea'): ?>
+
+	    <textarea <?php print textarea_attr($field_id, $field); ?> ></textarea>
+
         <?php else: ?>
 			<input <?php print input_attr($field_id, $field); ?> />
         <?php endif; ?>

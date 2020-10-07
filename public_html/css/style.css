@@ -2,13 +2,17 @@
     --main-bg-color: #FFBE2E;
     --main-bg-color-hov: #F5891D;
     --main-white: #eaeaea;
-    --main-black: #222222;
+    --main-black: #302312;
     --main-font: 'Open Sans', sans-serif;
 }
 
 body {
     font-family: var(--main-font);
     color: var(--main-black);
+}
+
+main {
+    min-height: 85vh;
 }
 
 /*navigation*/
@@ -31,7 +35,7 @@ nav .wrapper > div {
 }
 
 nav a {
-    color: #302312;
+    color: var(--main-black);
     font-weight: 700;
     text-decoration: none;
     padding-right: 15px;
@@ -77,6 +81,9 @@ nav a {
 }
 
 .card .card-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     box-sizing: border-box;
     padding: 5px;
     height: 60%;
@@ -96,6 +103,7 @@ nav a {
     height: 100%;
     width: 100%;
 }
+
 .map {
     height: 300px;
 }
@@ -109,6 +117,7 @@ nav a {
 /*footer*/
 
 footer {
+    font-size: 14px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -117,16 +126,32 @@ footer {
 }
 
 /*forms*/
+form {
+    padding: 10px;
+}
+
 #login,
-#register {
+#register,
+#feedback-form {
     margin: 20px auto;
     max-width: 500px;
     display: flex;
     flex-direction: column;
 }
 
+#feedback-form {
+    max-width: 600px;
+}
+
+#feedback-form textarea {
+    resize: vertical;
+    min-height: 100px;
+    max-height: 200px;
+}
+
 #login > label,
-#register > label {
+#register > label,
+#feedback-form > label {
     color: #5a5a5a;
     font-weight: 600;
     font-size: 1.2rem;
@@ -138,7 +163,9 @@ footer {
 #login input,
 #login button,
 #register input,
-#register button {
+#register button,
+#feedback-form textarea,
+#feedback-form button {
     outline: none;
     font-size: 1.2rem;
     box-sizing: border-box;
@@ -149,29 +176,33 @@ footer {
 }
 
 #login input,
-#register input {
+#register input,
+#feedback-form textarea {
     color: var(--main-black);
     background: var(--main-white);
 }
 
 #login button,
-#register button {
+#register button,
+#feedback-form button {
     margin-top: 25px;
     padding: 17px 10px;
     background: var(--main-bg-color);
-    color: var(--main-white);
+    color: var(--main-black);
     box-shadow: 0 7px 18px 0 rgba(0, 0, 0, 0.5);
     transition: 0.5s;
     transform: translateY(0);
 }
 
 #login button:hover,
-#register button:hover {
+#register button:hover,
+#feedback-form button:hover {
     background: var(--main-bg-color-hov);
 }
 
 #login button:active,
-#register button:active {
+#register button:active,
+#feedback-form button:active {
     transition: 0.5s;
     transform: translateY(5px);
     box-shadow: 0 7px 18px 0 rgba(0, 0, 0, 0);
@@ -183,6 +214,51 @@ label {
     margin: 15px 0 5px;
     display: flex;
     flex-direction: column;
+}
+
+/*form*/
+
+.table-h2 {
+    text-align: center;
+}
+
+#feedback-table {
+    margin: 20px auto;
+    max-width: 820px;
+}
+
+#feedback-table .time {
+    color: #5a5a5a;
+    font-size: 12px;
+}
+
+#feedback-table .name {
+    font-weight: 600;
+}
+
+#feedback-table .text {
+    font-size: 14px;
+}
+
+#feedback-table td {
+    padding: 5px 20px;
+}
+
+.feedback-message {
+    margin: 50px auto;
+    height: 60px;
+    background-color: var(--main-bg-color);
+    max-width: 600px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.feedback-message a {
+    font-weight: 700;
+    color: var(--main-black);
+    text-decoration: none;
 }
 
 /*content*/
