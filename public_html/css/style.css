@@ -1,15 +1,119 @@
 :root {
-    --main-bg-color: #458fb7;
-    --main-bg-color-hov: #2e6386;
+    --main-bg-color: #FFBE2E;
+    --main-bg-color-hov: #F5891D;
     --main-white: #eaeaea;
     --main-black: #222222;
     --main-font: 'Open Sans', sans-serif;
 }
 
-/*navigation*/
 body {
     font-family: var(--main-font);
     color: var(--main-black);
+}
+
+/*navigation*/
+nav {
+    background-color: var(--main-bg-color);
+}
+
+nav .wrapper {
+    margin: 0 auto;
+    padding: 0 15px 0 15px;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav .wrapper > div {
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: #302312;
+    font-weight: 700;
+    text-decoration: none;
+    padding-right: 15px;
+}
+
+.nav-right a:last-of-type {
+    padding-right: 0;
+}
+
+/*content*/
+
+.img-top {
+    background-image: url("../assets/img/taxi-top.jpg");
+    filter: hue-rotate(-7deg);
+    background-size: cover;
+    background-position: center;
+    height: 150px;
+}
+
+.container {
+    padding: 20px 0;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.container .wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.card {
+    box-sizing: border-box;
+    border: 1px solid #c6c6c6;
+    margin-bottom: 20px;
+    height: 380px;
+}
+
+.card .card-img-container {
+    height: 40%;
+}
+
+.card .card-info-container {
+    box-sizing: border-box;
+    padding: 5px;
+    height: 60%;
+}
+
+.card h2 {
+    margin: 0;
+    padding: 10px 0 10px;
+}
+
+.card p {
+    margin: 0;
+}
+
+.card .card-img-container img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+.map {
+    height: 300px;
+}
+
+.map iframe {
+    border: none;
+    width: 100%;
+    height: 300px;
+}
+
+/*footer*/
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    background-color: var(--main-bg-color);
 }
 
 /*forms*/
@@ -74,9 +178,39 @@ body {
 }
 
 label {
-    font-size: 18px;
+    font-size: 16px;
     color: var(--main-black);
     margin: 15px 0 5px;
     display: flex;
     flex-direction: column;
+}
+
+/*content*/
+
+@media only screen and (min-width: 450px) {
+    .img-top {
+        height: 300px;
+    }
+
+    .container .wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 400px;
+    }
+
+    .card {
+        width: 30%;
+        margin-bottom: 0;
+    }
+
+}
+
+
+@media only screen and (min-width: 1024px) {
+    .img-top {
+        height: 450px;
+    }
+
 }

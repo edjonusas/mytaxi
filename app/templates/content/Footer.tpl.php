@@ -1,0 +1,1 @@
+<span>© 2020. Edvinas Jonšas, all rights reserved.</span>

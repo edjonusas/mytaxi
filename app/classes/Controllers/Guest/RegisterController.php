@@ -40,9 +40,6 @@ class RegisterController extends Controller
     function index(): ?string
     {
 
-        $header_content = new Content([
-            'header' => 'Registruotis'
-        ]);
 
         if (App::$session->getUser()) {
             header('Location: my.php');
@@ -60,7 +57,6 @@ class RegisterController extends Controller
         }
 
         $this->page->setTitle('Registration');
-        $this->page->setHeader($header_content->render('Header.tpl.php'));
         $this->page->setContent($register->render());
         return $this->page->render();
     }

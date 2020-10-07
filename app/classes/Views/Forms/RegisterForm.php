@@ -22,6 +22,7 @@ class RegisterForm extends Form
                     'validators' =>
                         [
                             'validate_field_not_empty',
+                            'validate_no_numbers',
                             'validate_field_max_input_length' =>
                                 [
                                     'max' => 40
@@ -40,6 +41,7 @@ class RegisterForm extends Form
                     'validators' =>
                         [
                             'validate_field_not_empty',
+                            'validate_no_numbers',
                             'validate_field_max_input_length' =>
                                 [
                                     'max' => 40

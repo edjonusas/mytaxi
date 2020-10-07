@@ -126,3 +126,20 @@ function validate_field_max_input_length(string $field_value, array &$field, arr
 }
 
 
+/**
+ * validate if input has no int
+ *
+ * @param string $field_value
+ * @param array $field
+ * @return bool
+ */
+function validate_no_numbers(string $field_value, array &$field)
+{
+    if (!ctype_digit($field_value)) {
+        return true;
+    }
+    $field['error'] = 'negali būti skaičių';
+    return false;
+}
+
+
