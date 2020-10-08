@@ -20,6 +20,19 @@ class Navigation extends View
             $nav['right'][] = ['url' => Router::getUrl('register'), 'title' => 'Registruotis'];
             $nav['right'][] = ['url' => Router::getUrl('login'), 'title' => 'Prisijungti'];
         }
+        //adds active class to nav link
+        foreach ($nav['left'] as $key => $link ) {
+            if($link['url'] === $_SERVER['REQUEST_URI']) {
+                $nav['left'][$key]['class'] = 'active';
+            }
+        }
+
+        foreach ($nav['right'] as $key => $link ) {
+            if($link['url'] === $_SERVER['REQUEST_URI']) {
+                $nav['right'][$key]['class'] = 'active';
+            }
+        }
+
         parent::__construct($nav);
     }
 

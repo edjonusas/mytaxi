@@ -38,11 +38,12 @@ nav a {
     color: var(--main-black);
     font-weight: 700;
     text-decoration: none;
-    padding-right: 15px;
+    padding: 26px 10px;
 }
 
-.nav-right a:last-of-type {
-    padding-right: 0;
+nav .active {
+    background-color: var(--main-bg-color-hov);
+    color: #000000;
 }
 
 /*content*/
