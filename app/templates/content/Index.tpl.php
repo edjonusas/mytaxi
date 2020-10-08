@@ -8,7 +8,8 @@
 			</div>
 			<div class="card-info-container">
 				<h2>Siuntų pristatymas</h2>
-				<p>Abra kadbra ir tad taasda sgliukiliujo sakolioto makalito</p>
+				<p>In sem justo, commodo ut, suscipit at, pharetra vitae, orci. Duis sapien nunc, commodo et. Duis
+					sapien nunc, commodo et, interdum suscipit, sollicitudin et,</p>
 			</div>
 		</div>
 
@@ -18,8 +19,8 @@
 			</div>
 			<div class="card-info-container">
 				<h2>Grupių vežimas</h2>
-				<p>Abra kadbra ir tad taasda sgliukiliujo sakolioto makalito,
-					bra kadbra ir tad taasda sgliukiliujo</p>
+				<p>In sem justo, commodo ut, suscipit at, pharetra vitae, orci. Duis sapien nunc, commodo et. Duis
+					sapien nunc, commodo et, interdum suscipit, sollicitudin et,</p>
 			</div>
 		</div>
 
@@ -29,8 +30,8 @@
 			</div>
 			<div class="card-info-container">
 				<h2>Tarpmiestinis vežimas</h2>
-				<p>Abra kadbra ir tad taasda sgliukiliujo sakolioto makalito,
-					sgliukiliujo sakolioto makalito</p>
+				<p>In sem justo, commodo ut, suscipit at, pharetra vitae, orci. Duis sapien nunc, commodo et. Duis
+					sapien nunc, commodo et, interdum suscipit, sollicitudin et,</p>
 			</div>
 		</div>
 

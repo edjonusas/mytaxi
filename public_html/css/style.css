@@ -16,34 +16,39 @@ main {
 }
 
 /*navigation*/
-nav {
+
+#mob-menu {
+    display: block;
+    margin: 0 auto;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.mob {
     background-color: var(--main-bg-color);
 }
 
-nav .wrapper {
-    margin: 0 auto;
-    padding: 0 15px 0 15px;
-    max-width: 800px;
-    display: flex;
-    justify-content: space-between;
+.menu-container {
+    background-color: var(--main-bg-color);
+    padding-bottom: 20px;
 }
 
-nav .wrapper > div {
-    height: 70px;
+.menu-container > div {
     display: flex;
+    flex-direction: column;
     align-items: center;
+
 }
 
-nav a {
+.menu-container > div > a {
     color: var(--main-black);
-    font-weight: 700;
     text-decoration: none;
-    padding: 26px 10px;
+    font-weight: 700;
+    padding: 10px 0;
 }
 
-nav .active {
-    background-color: var(--main-bg-color-hov);
-    color: #000000;
+.menu-display {
+    display: none;
 }
 
 /*content*/
@@ -84,18 +89,19 @@ nav .active {
 .card .card-info-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     box-sizing: border-box;
     padding: 5px;
     height: 60%;
 }
 
 .card h2 {
+    font-size: 20px;
     margin: 0;
     padding: 10px 0 10px;
 }
 
 .card p {
+    font-size: 16px;
     margin: 0;
 }
 
@@ -265,6 +271,38 @@ label {
 /*content*/
 
 @media only screen and (min-width: 450px) {
+    /*Navigation*/
+    #mob-menu {
+        display: none;
+    }
+
+    nav {
+        background-color: var(--main-bg-color);
+    }
+
+    nav .wrapper {
+        margin: 0 auto;
+        padding: 0 15px 0 15px;
+        max-width: 800px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    nav .wrapper > div {
+        display: flex;
+        height: 70px;
+        flex-direction: row;
+    }
+
+    .menu-container > div > a {
+        padding: 26px 10px;
+    }
+
+    nav .active {
+        background-color: var(--main-bg-color-hov);
+        color: #000000;
+    }
+
     .img-top {
         height: 300px;
     }

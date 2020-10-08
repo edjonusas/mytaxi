@@ -29,6 +29,7 @@ class BasePage extends \Core\Views\Page
         $this->addCSS('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
         $this->addCSS('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap');
         $this->addCss('/css/style.css');
+        $this->addJS('assets/js/script.js');
         $this->setNav($nav->render());
         $this->setFooter($footer->render(ROOT.'/app/templates/content/Footer.tpl.php'));
         parent::__construct();
