@@ -147,7 +147,7 @@ form {
 }
 
 #feedback-form {
-    max-width: 600px;
+    max-width: 800px;
 }
 
 #feedback-form textarea {
@@ -223,7 +223,7 @@ label {
     flex-direction: column;
 }
 
-/*form*/
+/*feedback form*/
 
 .table-h2 {
     text-align: center;
@@ -240,10 +240,12 @@ label {
 }
 
 #feedback-table .name {
+    font-size: 14px;
     font-weight: 600;
 }
 
 #feedback-table .text {
+    width: 90%;
     font-size: 14px;
 }
 
@@ -252,10 +254,10 @@ label {
 }
 
 .feedback-message {
-    margin: 50px auto;
+    margin: 50px 10px;
     height: 60px;
     background-color: var(--main-bg-color);
-    max-width: 600px;
+    max-width: 800px;
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -267,6 +269,24 @@ label {
     color: var(--main-black);
     text-decoration: none;
 }
+
+.name-block {
+    text-align: center;
+    width: 120px;
+    height: 90px;
+    background-color: var(--main-bg-color);
+    display: flex;
+    margin-right: 10px;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.table-card {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
 
 /*content*/
 
@@ -303,6 +323,13 @@ label {
         color: #000000;
     }
 
+    nav a:hover {
+        box-sizing: border-box;
+        border-bottom: black 2px solid;
+        padding-bottom: 24px;
+        color: #000000;
+    }
+
     .img-top {
         height: 300px;
     }
@@ -320,6 +347,9 @@ label {
         margin-bottom: 0;
     }
 
+    .feedback-message {
+        margin: 50px auto;
+    }
 }
 
 

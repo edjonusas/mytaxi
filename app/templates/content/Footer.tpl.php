@@ -1,1 +1,1 @@
-<span>© <?php print date('Y') ?>. Edvinas Jonšas, all rights reserved.</span>
+<span>© <?php print date('Y') ?>. Edvinas Jonušas, all rights reserved.</span>

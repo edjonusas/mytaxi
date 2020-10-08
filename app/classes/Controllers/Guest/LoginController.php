@@ -5,8 +5,6 @@ namespace App\Controllers\Guest;
 use App\Abstracts\Controller;
 use App\App;
 use App\Views\Forms\LoginForm;
-use App\Views\Navigation;
-use Core\Views\Content;
 
 class LoginController extends Controller
 {

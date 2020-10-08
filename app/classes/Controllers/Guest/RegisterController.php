@@ -42,7 +42,7 @@ class RegisterController extends Controller
 
 
         if (App::$session->getUser()) {
-            header('Location: my.php');
+            header('Location: index');
         }
 
         $register = new RegisterForm();

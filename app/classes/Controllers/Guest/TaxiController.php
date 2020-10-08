@@ -42,7 +42,7 @@ class TaxiController extends Controller
             }
         } else {
             $message = [
-                'text' => 'Norite parašyti komentarą? Užsiregistruokite',
+                'text' => 'Norite parašyti atsiliepimą? Užsiregistruokite',
                 'link' => Router::getUrl('register')
             ];
         }
